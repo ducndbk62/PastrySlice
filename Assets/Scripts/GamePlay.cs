@@ -68,9 +68,7 @@ public class GamePlay : MonoBehaviour
                 audioSource.Play();
                 m_Rigidbody.isKinematic = true;
             }
-        if (collision.GetContact(0).thisCollider.tag == "Hilt" &&
-               (collision.GetContact(0).otherCollider.tag == "Holder" ||
-                collision.GetContact(0).otherCollider.tag == "CheckPoint"))
+        if (collision.GetContact(0).thisCollider.tag == "Hilt")
         {
             audioSource.clip = soundHolder;
             audioSource.Play();

@@ -9,6 +9,7 @@ public class SkinController : MonoBehaviour
     public GameObject imgPrice;
     public Text textTotalCoins;
     public GameObject knife;
+    public Camera camera;
 
     private int totalCoins;
 
@@ -25,19 +26,20 @@ public class SkinController : MonoBehaviour
     // Update is called once per frame
     public void OnClickSkin()
     {
-        if (PlayerPrefs.GetInt(gameObject.name) == 0)
+        if (PlayerPrefs.GetInt(gameObject.name) == 0) //neu player chua so huu skin nay
         {
             if (totalCoins >= price)
             {
                 totalCoins -= price;
                 imgPrice.SetActive(false);
                 PlayerPrefs.SetInt("TotalCoins", totalCoins);
-                PlayerPrefs.SetInt(gameObject.name, 1);
+                PlayerPrefs.SetInt(gameObject.name, 1); //player da so huu skin nay
                 textTotalCoins.text = totalCoins.ToString();
             }
         }
         GameObject currentKnife = GameObject.FindWithTag("Knife");
         Instantiate(knife, currentKnife.transform.position, Quaternion.Euler(new Vector3(0, 0, -60)));
         Destroy(currentKnife);
+        
     }
 }
