@@ -12,6 +12,7 @@ public class SettingSaving : MonoBehaviour
     void Start()
     {
         soundSlider.value = PlayerPrefs.GetFloat("Sound", 1);
+        sfxSlider.value = 1;
         sfxSlider.value = PlayerPrefs.GetFloat("SFX", 1);
     }
 
