@@ -9,12 +9,14 @@ TagManager:
   - ObjSliced
   - Ground
   - CheckPoint
-  - FinishX2
-  - FinishX3
-  - FinishX5
-  - FinishX10
   - Knife
   - Hilt
+  - Bonus
+  - X2
+  - X3
+  - X4
+  - X5
+  - X10
   layers:
   - Default
   - TransparentFX

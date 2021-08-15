@@ -13,6 +13,7 @@ public class GamePlay : MonoBehaviour
     public GameObject blade;
     public GameObject btnRevive;
     public GameObject txtCheckPoint;
+    public GameObject wall;
 
     AudioSource audioSource;
     public AudioClip soundKnife;
@@ -62,7 +63,8 @@ public class GamePlay : MonoBehaviour
         if (Time.time - lastKinematic > kinematicTime)
             if (collision.GetContact(0).thisCollider.tag == "Blade" &&
                (collision.GetContact(0).otherCollider.tag == "Holder" ||
-                collision.GetContact(0).otherCollider.tag == "CheckPoint"))
+                collision.GetContact(0).otherCollider.tag == "CheckPoint" ||
+                collision.GetContact(0).otherCollider.tag == "Bonus"))
             {
                 audioSource.clip = soundHolder;
                 audioSource.Play();
@@ -103,6 +105,10 @@ public class GamePlay : MonoBehaviour
                 txtCheckPoint.SetActive(true);
                 checkedPosition = gameObject.transform.position;
                 break;
+            case "Bonus":
+                wall.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                bladeCollider.isTrigger = false;
+                break;
             case "Ground":
                 Time.timeScale = 0;
                 if (!passedCheckPoint)
@@ -121,24 +127,19 @@ public class GamePlay : MonoBehaviour
                 Time.timeScale = 0;
                 gameFinish.SetActive(true);
                 break;
-            case "FinishX2":
-                Time.timeScale = 0;
-                gameFinish.SetActive(true);
+            case "X2":                
                 gameController.GetComponent<GameController>().MultipleLevelCoins(2);
                 break;
-            case "FinishX3":
-                Time.timeScale = 0;
-                gameFinish.SetActive(true);
+            case "X3":
                 gameController.GetComponent<GameController>().MultipleLevelCoins(3);
                 break;
-            case "FinishX5":
-                Time.timeScale = 0;
-                gameFinish.SetActive(true);
+            case "X4":
+                gameController.GetComponent<GameController>().MultipleLevelCoins(4);
+                break;
+            case "X5":
                 gameController.GetComponent<GameController>().MultipleLevelCoins(5);
                 break;
-            case "FinishX10":
-                Time.timeScale = 0;
-                gameFinish.SetActive(true);
+            case "X10":
                 gameController.GetComponent<GameController>().MultipleLevelCoins(10);
                 break;
         }    
