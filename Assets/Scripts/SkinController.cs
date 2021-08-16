@@ -10,7 +10,7 @@ public class SkinController : MonoBehaviour
     public GameObject imgPrice;
     public Text textTotalCoins;
     public GameObject knife;
-    public CinemachineVirtualCamera camera; 
+    //public CinemachineVirtualCamera camera; 
 
     private int totalCoins;
 
@@ -41,7 +41,7 @@ public class SkinController : MonoBehaviour
         GameObject currentKnife = GameObject.FindWithTag("Knife");
         Instantiate(knife, currentKnife.transform.position, Quaternion.Euler(new Vector3(0, 0, -60)));
         Destroy(currentKnife);
-        camera.Follow = knife.transform;
-        camera.LookAt = knife.transform;
+        //camera.Follow = knife.transform;
+        //camera.LookAt = knife.transform;
     }
 }

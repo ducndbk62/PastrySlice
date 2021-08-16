@@ -14,17 +14,11 @@ public class ObjectSlicing : MonoBehaviour
         gameController = GameObject.FindGameObjectWithTag("GameController");
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Blade")
         {            
-            Instantiate(slicedObject, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(slicedObject, gameObject.transform.position, gameObject.transform.rotation, gameObject.transform.parent);
             Destroy(gameObject);
             gameController.GetComponent<GameController>().AddLevelCoins(coin);           
         }

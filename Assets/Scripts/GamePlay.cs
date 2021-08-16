@@ -29,7 +29,7 @@ public class GamePlay : MonoBehaviour
 
     bool isSlow = true;
     bool passedCheckPoint;
-    Vector3 checkedPosition;
+    public Vector3 revivePosition;
 
     Scene scene;
     private GameObject gameController;
@@ -76,13 +76,15 @@ public class GamePlay : MonoBehaviour
             audioSource.Play();
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
-            m_Rigidbody.AddForce(new Vector3(0, 200, 0));
+            m_Rigidbody.AddForce(new Vector3(0, 300, 0));
             m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
 
         }
         if (collision.gameObject.tag == "Ground")
         {
             Time.timeScale = 0;
+            if (!passedCheckPoint)
+                btnRevive.SetActive(false);
             gameOver.SetActive(true);
         }
     }
@@ -103,7 +105,6 @@ public class GamePlay : MonoBehaviour
                 bladeCollider.isTrigger = false;
                 passedCheckPoint = true;
                 txtCheckPoint.SetActive(true);
-                checkedPosition = gameObject.transform.position;
                 break;
             case "Bonus":
                 wall.gameObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -169,20 +170,20 @@ public class GamePlay : MonoBehaviour
         {
             if (gameObject.transform.right.x > 0 && gameObject.transform.right.y < 0)
             {
-                m_Rigidbody.angularVelocity = new Vector3(0, 0, -1);
+                m_Rigidbody.angularVelocity = new Vector3(0, 0, -0.5f);
                 isSlow = true;
             }
         }
-        else if (gameObject.transform.right.x < 0.5)
+        else if (gameObject.transform.right.x < 0.6)
         {
-            m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
+            m_Rigidbody.angularVelocity = new Vector3(0, 0, -30);
             isSlow = false;
         }
     }
 
     public void Revive()
     {
-        gameObject.transform.position = checkedPosition;
+        gameObject.transform.position = revivePosition;
         gameObject.transform.right = new Vector3(-1, -2, 0);
         m_Rigidbody.isKinematic = true;
         //m_Rigidbody.isKinematic = false;
