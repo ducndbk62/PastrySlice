@@ -54,7 +54,7 @@ public class GamePlay : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
                 Jump();
-            AdjustRotation();
+            //AdjustRotation();
         }
     }
 
@@ -161,7 +161,7 @@ public class GamePlay : MonoBehaviour
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
         }
-        m_Rigidbody.AddForceAtPosition(force, transform.position - new Vector3(1, 0, 0));
+        m_Rigidbody.AddForceAtPosition(force, transform.position - new Vector3(90, 0, 0));
     }
 
     void AdjustRotation()
