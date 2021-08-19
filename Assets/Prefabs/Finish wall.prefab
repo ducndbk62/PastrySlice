@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2003472040344386447}
   - component: {fileID: 2003472040344386547}
   - component: {fileID: 2003472040344386546}
-  - component: {fileID: 2003472040344386545}
+  - component: {fileID: 4998469908149975064}
   m_Layer: 0
   m_Name: PS_Ending_Thorn_model (2)
   m_TagString: Finish
@@ -129,7 +129,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &2003472040344386545
+--- !u!65 &4998469908149975064
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 18.181486, y: 55.0561, z: 18.181488}
-  m_Center: {x: 0, y: 6.4770136, z: 0.00000047683716}
+  m_Center: {x: 0, y: 6.477006, z: 0.00000047683716}
 --- !u!1 &5345796240829310324
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ GameObject:
   - component: {fileID: 6697266008664257205}
   - component: {fileID: 2566380959531021261}
   - component: {fileID: 1279989738298811032}
-  - component: {fileID: 5345796240829310326}
+  - component: {fileID: 5417154789252641601}
   m_Layer: 0
   m_Name: PS_Ending_Thorn_model (1)
   m_TagString: Finish
@@ -222,7 +222,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5345796240829310326
+--- !u!65 &5417154789252641601
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

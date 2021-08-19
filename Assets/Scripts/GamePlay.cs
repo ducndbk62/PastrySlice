@@ -54,29 +54,29 @@ public class GamePlay : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1"))
                 Jump();
-            //AdjustRotation();
+            AdjustRotation();
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (Time.time - lastKinematic > kinematicTime)
-            if (collision.GetContact(0).thisCollider.tag == "Blade" &&
-               (collision.GetContact(0).otherCollider.tag == "Holder" ||
-                collision.GetContact(0).otherCollider.tag == "CheckPoint" ||
-                collision.GetContact(0).otherCollider.tag == "Bonus"))
-            {
-                audioSource.clip = soundHolder;
-                audioSource.Play();
-                m_Rigidbody.isKinematic = true;
-            }
+        //if (Time.time - lastKinematic > kinematicTime)
+        //    if (collision.GetContact(0).thisCollider.tag == "Blade" &&
+        //       (collision.GetContact(0).otherCollider.tag == "Holder" ||
+        //        collision.GetContact(0).otherCollider.tag == "CheckPoint" ||
+        //        collision.GetContact(0).otherCollider.tag == "Bonus"))
+        //    {
+        //        audioSource.clip = soundHolder;
+        //        audioSource.Play();
+        //        m_Rigidbody.isKinematic = true;
+        //    }
         if (collision.GetContact(0).thisCollider.tag == "Hilt")
         {
             audioSource.clip = soundHolder;
             audioSource.Play();
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
-            m_Rigidbody.AddForce(new Vector3(0, 300, 0));
+            m_Rigidbody.AddForce(new Vector3(0, 500, 0));
             m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
 
         }
@@ -99,16 +99,37 @@ public class GamePlay : MonoBehaviour
         switch (collider.gameObject.tag)
         {
             case "Holder":
-                bladeCollider.isTrigger = false;                
+                //bladeCollider.isTrigger = false;
+                if (Time.time - lastKinematic > kinematicTime)
+                {
+                    m_Rigidbody.isKinematic = true;
+                    audioSource.clip = soundHolder;
+                    audioSource.Play();
+                    
+                }                     
                 break;
             case "CheckPoint":
-                bladeCollider.isTrigger = false;
+                //bladeCollider.isTrigger = false;
+                if (Time.time - lastKinematic > kinematicTime)
+                {
+                    m_Rigidbody.isKinematic = true;
+                    audioSource.clip = soundHolder;
+                    audioSource.Play();
+                    
+                }
                 passedCheckPoint = true;
                 txtCheckPoint.SetActive(true);
                 break;
             case "Bonus":
                 wall.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                bladeCollider.isTrigger = false;
+                //bladeCollider.isTrigger = false;
+                if (Time.time - lastKinematic > kinematicTime)
+                {
+                    m_Rigidbody.isKinematic = true;
+                    audioSource.clip = soundHolder;
+                    audioSource.Play();
+                    
+                }
                 break;
             case "Ground":
                 Time.timeScale = 0;
@@ -148,6 +169,7 @@ public class GamePlay : MonoBehaviour
 
     void Jump()
     {
+        bladeCollider.isTrigger = true;
         isSlow = true;
         audioSource.clip = soundKnife;
         audioSource.Play();
@@ -161,6 +183,7 @@ public class GamePlay : MonoBehaviour
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
         }
+        m_Rigidbody.AddForce(new Vector3(0, 100, 0));
         m_Rigidbody.AddForceAtPosition(force, transform.position - new Vector3(90, 0, 0));
     }
 
@@ -176,7 +199,7 @@ public class GamePlay : MonoBehaviour
         }
         else if (gameObject.transform.right.x < 0.6)
         {
-            m_Rigidbody.angularVelocity = new Vector3(0, 0, -30);
+            m_Rigidbody.angularVelocity = new Vector3(0, 0, -40);
             isSlow = false;
         }
     }

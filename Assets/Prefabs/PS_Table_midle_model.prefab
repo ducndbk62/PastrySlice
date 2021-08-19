@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7947822671719553303}
   - component: {fileID: 5307670099869773277}
   - component: {fileID: 2824615627094050006}
+  - component: {fileID: -6283634846783167900}
   m_Layer: 0
   m_Name: PS_Table_midle_model
   m_TagString: Holder
@@ -96,3 +97,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &-6283634846783167900
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956113472883035144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7659369413799275688, guid: 437662bbe419c3a46870d3e2ee83dba3, type: 3}

@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5943876845026955109}
   - component: {fileID: 7337278496039715008}
   - component: {fileID: 4771502932839347210}
-  - component: {fileID: 4951707380676332661}
   - component: {fileID: 8397128504846817328}
   - component: {fileID: 6593895997879976280}
+  - component: {fileID: 5386158800593829960}
   m_Layer: 0
   m_Name: Lolipop_Uncut_model
   m_TagString: Untagged
@@ -82,19 +82,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &4951707380676332661
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6428665074913646047}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.6981723, y: 4.7267284, z: 0.20836566}
-  m_Center: {x: -0.012521985, y: 2.3633642, z: -0.007743446}
 --- !u!54 &8397128504846817328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,3 +113,17 @@ MonoBehaviour:
   slicedObject: {fileID: 1237409955915968379, guid: c4e1d7ce8e4e424459115b4872fc5c5a,
     type: 3}
   coin: 1
+--- !u!64 &5386158800593829960
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6428665074913646047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3165574239250208101, guid: a6a59c893e886e24784b3cdea05a2ad2, type: 3}
