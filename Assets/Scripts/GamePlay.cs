@@ -76,7 +76,7 @@ public class GamePlay : MonoBehaviour
             audioSource.Play();
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
-            m_Rigidbody.AddForce(new Vector3(0, 500, 0));
+            m_Rigidbody.AddForce(new Vector3(0, 700, 0));
             m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
 
         }
@@ -193,13 +193,13 @@ public class GamePlay : MonoBehaviour
         {
             if (gameObject.transform.right.x > 0 && gameObject.transform.right.y < 0)
             {
-                m_Rigidbody.angularVelocity = new Vector3(0, 0, -0.5f);
+                m_Rigidbody.angularVelocity = new Vector3(0, 0, -1f);
                 isSlow = true;
             }
         }
-        else if (gameObject.transform.right.x < 0.6)
+        else if (gameObject.transform.right.x < 0.9)
         {
-            m_Rigidbody.angularVelocity = new Vector3(0, 0, -40);
+            m_Rigidbody.angularVelocity = new Vector3(0, 0, -60);
             isSlow = false;
         }
     }

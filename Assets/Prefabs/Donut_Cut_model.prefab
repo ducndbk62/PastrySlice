@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   half1: {fileID: 6374611100291794993}
   half2: {fileID: 2124625935792943252}
-  force: {x: 0, y: 0, z: 500}
+  force: {x: 0, y: 0, z: 1000}
 --- !u!82 &-340117624609524456
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5e228848b3e963e4eac8c11bd6d1523e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4722222
+  m_Volume: 0.25972664
   m_Pitch: 1
   Loop: 0
   Mute: 0
