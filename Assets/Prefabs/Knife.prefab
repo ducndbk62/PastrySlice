@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2217373763327700490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.499999, y: 0.22, z: 0}
+  m_LocalPosition: {x: -0.96, y: 0, z: 0}
   m_LocalScale: {x: 1.89, y: 0.41000003, z: 0.20000002}
   m_Children: []
   m_Father: {fileID: 2217373764973810903}
@@ -164,8 +164,10 @@ MonoBehaviour:
   blade: {fileID: 2217373765179180083}
   btnRevive: {fileID: 0}
   txtCheckPoint: {fileID: 0}
+  wall: {fileID: 0}
   soundKnife: {fileID: 8300000, guid: 4499f9e69a3324b4bb516960348c2aef, type: 3}
   soundHolder: {fileID: 8300000, guid: fb88c22a3d912634091b14380d9ce6b1, type: 3}
+  revivePosition: {x: 0, y: 0, z: 0}
 --- !u!82 &2277716414904652652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -289,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2217373765151720812}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.54, y: 0.22, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.46, y: 0.11, z: 0.34}
   m_Children: []
   m_Father: {fileID: 2217373764973810903}
@@ -383,7 +385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2217373765179180083}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.59, y: 0, z: 0}
+  m_LocalPosition: {x: 0.98, y: -0.27, z: 0}
   m_LocalScale: {x: 0.95, y: 1.63, z: 0.01}
   m_Children: []
   m_Father: {fileID: 2217373764973810903}

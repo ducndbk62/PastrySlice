@@ -39,7 +39,7 @@ public class GamePlay : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         bladeCollider = blade.GetComponent<Collider>();
-        m_Rigidbody.centerOfMass = Vector3.zero;
+        m_Rigidbody.centerOfMass = new Vector3(-0.5f, 0, 0);
         scene = SceneManager.GetActiveScene();
         gameController = GameObject.FindGameObjectWithTag("GameController");
         passedCheckPoint = false;
@@ -50,7 +50,7 @@ public class GamePlay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 1)
+        if (Time.timeScale > 0)
         {
             if (Input.GetButtonDown("Fire1"))
                 Jump();
@@ -76,10 +76,11 @@ public class GamePlay : MonoBehaviour
             audioSource.Play();
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.isKinematic = false;
-            m_Rigidbody.AddForce(new Vector3(0, 700, 0));
+            if (collision.transform.position.y < gameObject.transform.position.y)
+                m_Rigidbody.AddForce(new Vector3(0, 700, 0));
             m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
-
         }
+        
         if (collision.gameObject.tag == "Ground")
         {
             Time.timeScale = 0;
@@ -211,6 +212,6 @@ public class GamePlay : MonoBehaviour
         m_Rigidbody.isKinematic = true;
         //m_Rigidbody.isKinematic = false;
         gameOver.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1.1f;
     }
 }

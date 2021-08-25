@@ -351,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   half1: {fileID: 1636525426460197422}
   half2: {fileID: 2946550996319097509}
-  force: {x: 0, y: 0, z: 500}
+  force: {x: 0, y: 0, z: 2000}
 --- !u!82 &-1758175101714530842
 AudioSource:
   m_ObjectHideFlags: 0
