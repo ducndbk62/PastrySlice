@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CycleRotation1 : MonoBehaviour
 {
-    public float rotateSpeed;
+    public Vector3 rotateSpeed;
+    bool isStop = false;
 
     // Start is called before the first frame update
     void Start()
@@ -13,22 +14,23 @@ public class CycleRotation1 : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        if (Time.timeScale == 1)
+        if (Time.timeScale > 0)
         {
-            if (rotateSpeed == 0)
+            if (isStop)
             {
                 if (Input.GetMouseButton(0))
                 {
-                    rotateSpeed = 2;
+                    isStop = false;
                 }
-            } else gameObject.transform.Rotate(new Vector3(0, 0, rotateSpeed));
+            }
+            else gameObject.transform.Rotate(rotateSpeed);
         }
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        rotateSpeed = 0;
+        isStop = true;
     }
 }

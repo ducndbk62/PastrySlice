@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365923275649075669}
-  - component: {fileID: 188795194798168039}
   m_Layer: 0
   m_Name: PS_cycle_rotate_2_model
   m_TagString: Untagged
@@ -32,19 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &188795194798168039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035781646066652015}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 957fd973c08ee9c4e9bac52df7dc2cf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 0
 --- !u!1 &4207372098737479294
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957fd973c08ee9c4e9bac52df7dc2cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 2
+  rotateSpeed: {x: 0, y: 0, z: 2}
 --- !u!64 &6788088438666091917
 MeshCollider:
   m_ObjectHideFlags: 0

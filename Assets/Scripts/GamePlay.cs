@@ -78,6 +78,7 @@ public class GamePlay : MonoBehaviour
             m_Rigidbody.isKinematic = false;
             if (collision.transform.position.y < gameObject.transform.position.y)
                 m_Rigidbody.AddForce(new Vector3(0, 700, 0));
+            //else m_Rigidbody.AddForce(new Vector3(, -200, 0));
             m_Rigidbody.angularVelocity = new Vector3(0, 0, -20);
         }
         

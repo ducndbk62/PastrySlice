@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef74b5311e9136046814215cbbf8ba72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: {x: 150, y: 300, z: 0}
+  force: {x: 300, y: 1350, z: 0}
   dragForce: {x: -120, y: 0, z: 0}
   gameFinish: {fileID: 0}
   gameOver: {fileID: 0}
