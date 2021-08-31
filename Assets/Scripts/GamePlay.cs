@@ -201,7 +201,7 @@ public class GamePlay : MonoBehaviour
         }
         else if (gameObject.transform.right.x < 0.9)
         {
-            m_Rigidbody.angularVelocity = new Vector3(0, 0, -60);
+            m_Rigidbody.angularVelocity = new Vector3(0, 0, -80);
             isSlow = false;
         }
     }
