@@ -111,7 +111,6 @@ public class GamePlay : MonoBehaviour
                 }                     
                 break;
             case "CheckPoint":
-                //bladeCollider.isTrigger = false;
                 if (Time.time - lastKinematic > kinematicTime)
                 {
                     m_Rigidbody.isKinematic = true;
@@ -124,7 +123,6 @@ public class GamePlay : MonoBehaviour
                 break;
             case "Bonus":
                 wall.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                //bladeCollider.isTrigger = false;
                 if (Time.time - lastKinematic > kinematicTime)
                 {
                     m_Rigidbody.isKinematic = true;
@@ -211,7 +209,6 @@ public class GamePlay : MonoBehaviour
         gameObject.transform.position = revivePosition;
         gameObject.transform.right = new Vector3(-1, -2, 0);
         m_Rigidbody.isKinematic = true;
-        //m_Rigidbody.isKinematic = false;
         gameOver.SetActive(false);
         Time.timeScale = 1.1f;
     }
